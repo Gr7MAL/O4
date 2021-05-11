@@ -29,9 +29,6 @@ X = []
 y = trueFiles.target
 for i in range(len(data2)):
     X.append(imread(data2[i]).flatten())
-    
-class_names = [os.path.basename(x[0]) for x in os.walk(curDir)]
-class_names = class_names[1:len(class_names)]
 
 # %%
 
