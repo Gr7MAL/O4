@@ -49,7 +49,7 @@ titles_options = [("Confusion matrix, without normalization", None),
                   ("Normalized confusion matrix", 'true')]
 for title, normalize in titles_options:
     disp = plot_confusion_matrix(classifier, X_test, y_test,
-                                 display_labels=class_names,
+                                 display_labels=trueFiles.target_names,
                                  cmap=plt.cm.Blues,
                                  normalize=normalize)
     disp.ax_.set_title(title)
@@ -58,12 +58,3 @@ for title, normalize in titles_options:
     print(disp.confusion_matrix)
 
 plt.show()
-
-# %%
-
-os.walk(".")
-
-classN = [os.path.basename(x[0]) for x in os.walk(curDir)]
-classN = classN[1:len(classN)]
-
-print(classN)
